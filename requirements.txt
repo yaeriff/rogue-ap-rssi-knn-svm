@@ -1,0 +1,6 @@
+# Versi sesuai log eksekusi (hasil_bagian*.txt). Mininet-WiFi hanya perlu untuk skrip pembangkit data.
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.8.0
+scikit-learn==1.7.2
+matplotlib=3.5.1

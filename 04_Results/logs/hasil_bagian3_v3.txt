@@ -1,0 +1,105 @@
+--- Lingkungan eksekusi ---
+Waktu menjalankan : 2026-10-13 16:19
+Sistem operasi    : Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+Python            : 3.10.12
+numpy / pandas / scipy / scikit-learn : 1.26.4 / 2.3.3 / 1.8.0 / 1.7.2
+CPU / core / RAM  : AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx / 2 core / 7.8 GB
+Mininet           : 2.7
+Mininet-WiFi(pip) : 2.7
+Berkas dataset    : /home/rifqi/Penelitian_RogueAP/02_Dataset/dataset_rssi.csv | terakhir diubah 2026-06-11 16:08
+
+--- Konfigurasi grid pada eksekusi ini ---
+KNN n_neighbors        : [1, 3, 5, 7, 9, 11, 15, 21, 31, 51, 75, 101]
+SVM RBF C (grid penuh) : [0.1, 1, 10, 100]
+SVM RBF C (ringkas, Bagian 3): [0.1, 1, 10, 100, 1000]
+
+=== BAGIAN 3: pengulangan multi-seed (grid ringkas: RBF+linear, tanpa class_weight) ===
+
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+   selesai [Acak-stratified] seed 42
+   selesai [Acak-stratified] seed 43
+   selesai [Acak-stratified] seed 44
+   selesai [Acak-stratified] seed 45
+   selesai [Acak-stratified] seed 46
+   selesai [Acak-stratified] seed 47
+   selesai [Acak-stratified] seed 48
+   selesai [Acak-stratified] seed 49
+   selesai [Acak-stratified] seed 50
+   selesai [Acak-stratified] seed 51
+   selesai [Blok spasial 10x10 m] seed 42
+   selesai [Blok spasial 10x10 m] seed 43
+   selesai [Blok spasial 10x10 m] seed 44
+   selesai [Blok spasial 10x10 m] seed 45
+   selesai [Blok spasial 10x10 m] seed 46
+   selesai [Blok spasial 10x10 m] seed 47
+   selesai [Blok spasial 10x10 m] seed 48
+   selesai [Blok spasial 10x10 m] seed 49
+   selesai [Blok spasial 10x10 m] seed 50
+   selesai [Blok spasial 10x10 m] seed 51
+
+--- Rerata +- SD antar seed (data uji) ---
+
+   Acak-stratified | KNN | n seed = 10
+      acc      : 0.9790 +- 0.0014
+      prec     : 0.9377 +- 0.0110
+      rec      : 0.9156 +- 0.0075
+      f1       : 0.9265 +- 0.0046
+      f1_macro : 0.9571 +- 0.0027
+      mcc      : 0.9143 +- 0.0055
+      auc      : 0.9973 +- 0.0004
+      prauc    : 0.9846 +- 0.0022
+
+   Acak-stratified | SVM | n seed = 10
+      acc      : 0.9777 +- 0.0023
+      prec     : 0.9267 +- 0.0134
+      rec      : 0.9187 +- 0.0147
+      f1       : 0.9226 +- 0.0081
+      f1_macro : 0.9548 +- 0.0047
+      mcc      : 0.9096 +- 0.0094
+      auc      : 0.9966 +- 0.0024
+      prauc    : 0.9841 +- 0.0047
+
+   Blok spasial 10x10 m | KNN | n seed = 10
+      acc      : 0.9658 +- 0.0236
+      prec     : 0.8985 +- 0.0885
+      rec      : 0.8960 +- 0.0460
+      f1       : 0.8946 +- 0.0546
+      f1_macro : 0.9369 +- 0.0343
+      mcc      : 0.8759 +- 0.0652
+      auc      : 0.9874 +- 0.0129
+      prauc    : 0.9478 +- 0.0663
+
+   Blok spasial 10x10 m | SVM | n seed = 10
+      acc      : 0.9705 +- 0.0162
+      prec     : 0.9136 +- 0.0627
+      rec      : 0.9020 +- 0.0402
+      f1       : 0.9065 +- 0.0409
+      f1_macro : 0.9443 +- 0.0249
+      mcc      : 0.8897 +- 0.0485
+      auc      : 0.9953 +- 0.0043
+      prauc    : 0.9781 +- 0.0167
+
+--- Selisih berpasangan KNN - SVM pada MCC ---
+   Acak-stratified: rerata selisih=+0.0047 +- 0.0056 | KNN lebih tinggi pada 8 dari 10 seed
+   Blok spasial 10x10 m: rerata selisih=-0.0138 +- 0.0244 | KNN lebih tinggi pada 3 dari 10 seed
+
+--- Parameter terpilih (frekuensi) ---
+   Acak-stratified | KNN:
+      3x {'clf__metric': 'euclidean', 'clf__n_neighbors': 101, 'clf__weights': 'uniform'}
+      2x {'clf__metric': 'euclidean', 'clf__n_neighbors': 51, 'clf__weights': 'uniform'}
+      1x {'clf__metric': 'manhattan', 'clf__n_neighbors': 75, 'clf__weights': 'uniform'}
+   Acak-stratified | SVM:
+      4x {'clf__C': 1, 'clf__class_weight': None, 'clf__gamma': 0.1, 'clf__kernel': 'rbf'}
+      2x {'clf__C': 10, 'clf__class_weight': None, 'clf__gamma': 0.1, 'clf__kernel': 'rbf'}
+      1x {'clf__C': 100, 'clf__class_weight': None, 'clf__gamma': 0.01, 'clf__kernel': 'rbf'}
+   Blok spasial 10x10 m | KNN:
+      1x {'clf__metric': 'euclidean', 'clf__n_neighbors': 7, 'clf__weights': 'uniform'}
+      1x {'clf__metric': 'euclidean', 'clf__n_neighbors': 9, 'clf__weights': 'distance'}
+      1x {'clf__metric': 'manhattan', 'clf__n_neighbors': 75, 'clf__weights': 'distance'}
+   Blok spasial 10x10 m | SVM:
+      4x {'clf__C': 1000, 'clf__class_weight': None, 'clf__gamma': 0.01, 'clf__kernel': 'rbf'}
+      3x {'clf__C': 100, 'clf__class_weight': None, 'clf__gamma': 0.1, 'clf__kernel': 'rbf'}
+      1x {'clf__C': 100, 'clf__class_weight': None, 'clf__gamma': 0.01, 'clf__kernel': 'rbf'}

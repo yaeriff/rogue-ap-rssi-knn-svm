@@ -1,0 +1,155 @@
+--- Lingkungan eksekusi ---
+Waktu menjalankan : 2026-10-13 16:11
+Sistem operasi    : Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+Python            : 3.10.12
+numpy / pandas / scipy / scikit-learn : 1.26.4 / 2.3.3 / 1.8.0 / 1.7.2
+CPU / core / RAM  : AMD Ryzen 3 3300U with Radeon Vega Mobile Gfx / 2 core / 7.8 GB
+Mininet           : 2.7
+Mininet-WiFi(pip) : 2.7
+Berkas dataset    : /home/rifqi/Penelitian_RogueAP/02_Dataset/dataset_rssi.csv | terakhir diubah 2026-06-11 16:08
+
+--- Konfigurasi grid pada eksekusi ini ---
+KNN n_neighbors        : [1, 3, 5, 7, 9, 11, 15, 21, 31, 51, 75, 101]
+SVM RBF C (grid penuh) : [0.1, 1, 10, 100]
+SVM RBF C (ringkas, Bagian 3): [0.1, 1, 10, 100, 1000]
+
+=== BAGIAN 2: ablation 4 skenario, uji statistik, waktu, galat spasial ===
+
+Split stratified 70:30, seed 42: latih=7140 (Rogue 1032), uji=3061 (Rogue 443, 14.47%)
+Scoring GridSearchCV = MCC, 5-fold stratified, scaler berada di dalam Pipeline.
+KNN default memakai k=3.
+
+   selesai S1 KNN (0 dtk)
+   selesai S1 SVM (1 dtk)
+   selesai S2 KNN (0 dtk)
+   selesai S2 SVM (0 dtk)
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+/usr/lib/python3/dist-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.17.3 and <1.25.0 is required for this version of SciPy (detected version 1.26.4
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+   selesai S3 KNN (18 dtk)
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+/home/rifqi/.local/lib/python3.10/site-packages/sklearn/svm/_base.py:305: ConvergenceWarning: Solver terminated early (max_iter=500000).  Consider pre-processing your data with StandardScaler or MinMaxScaler.
+  warnings.warn(
+   selesai S3 SVM (263 dtk)
+   selesai S4 KNN (13 dtk)
+   selesai S4 SVM (95 dtk)
+
+--- Tabel metrik (data uji) ---
+                 skenario algo    acc   prec    rec     f1  f1_macro    mcc    auc  prauc
+S1 default, tanpa scaling  KNN 0.9807 0.9344 0.9323 0.9333    0.9610 0.9221 0.9819 0.9298
+S1 default, tanpa scaling  SVM 0.9824 0.9513 0.9255 0.9382    0.9640 0.9280 0.9979 0.9877
+     S2 default + scaling  KNN 0.9797 0.9320 0.9278 0.9299    0.9590 0.9180 0.9836 0.9391
+     S2 default + scaling  SVM 0.9817 0.9510 0.9210 0.9358    0.9626 0.9253 0.9979 0.9878
+ S3 tuning, tanpa scaling  KNN 0.9811 0.9529 0.9142 0.9332    0.9611 0.9224 0.9979 0.9874
+ S3 tuning, tanpa scaling  SVM 0.9801 0.9361 0.9255 0.9308    0.9596 0.9191 0.9978 0.9872
+      S4 tuning + scaling  KNN 0.9804 0.9485 0.9142 0.9310    0.9598 0.9198 0.9979 0.9871
+      S4 tuning + scaling  SVM 0.9817 0.9428 0.9300 0.9364    0.9628 0.9257 0.9979 0.9880
+
+--- Confusion matrix & laju galat ---
+                 skenario algo  TP   TN  FP  FN    FPR    FNR
+S1 default, tanpa scaling  KNN 413 2589  29  30 0.0111 0.0677
+S1 default, tanpa scaling  SVM 410 2597  21  33 0.0080 0.0745
+     S2 default + scaling  KNN 411 2588  30  32 0.0115 0.0722
+     S2 default + scaling  SVM 408 2597  21  35 0.0080 0.0790
+ S3 tuning, tanpa scaling  KNN 405 2598  20  38 0.0076 0.0858
+ S3 tuning, tanpa scaling  SVM 410 2590  28  33 0.0107 0.0745
+      S4 tuning + scaling  KNN 405 2596  22  38 0.0084 0.0858
+      S4 tuning + scaling  SVM 412 2593  25  31 0.0095 0.0700
+
+--- Parameter terbaik (MCC rerata 5-fold CV pada data latih) ---
+   S1 KNN: CV-MCC=nan | (default)
+   S1 SVM: CV-MCC=nan | (default)
+   S2 KNN: CV-MCC=nan | (default)
+   S2 SVM: CV-MCC=nan | (default)
+   S3 KNN: CV-MCC=0.9091 | {'clf__metric': 'euclidean', 'clf__n_neighbors': 75, 'clf__weights': 'uniform'}
+   S3 SVM: CV-MCC=0.9073 | {'clf__C': 10, 'clf__class_weight': None, 'clf__degree': 2, 'clf__gamma': 'scale', 'clf__kernel': 'poly'}
+   S4 KNN: CV-MCC=0.9091 | {'clf__metric': 'manhattan', 'clf__n_neighbors': 75, 'clf__weights': 'uniform'}
+   S4 SVM: CV-MCC=0.9059 | {'clf__C': 10, 'clf__class_weight': None, 'clf__gamma': 0.1, 'clf__kernel': 'rbf'}
+
+--- McNemar eksak: KNN vs SVM per skenario (kesalahan prediksi berpasangan) ---
+   n11=keduanya benar, n10=SVM benar & KNN salah, n01=SVM salah & KNN benar, n00=keduanya salah
+   S1: n11=2980 n10=27 n01=22 n00=32 | p=0.5682
+   S2: n11=2979 n10=26 n01=20 n00=36 | p=0.4614
+   S3: n11=2989 n10=11 n01=14 n00=47 | p=0.6900
+   S4: n11=2996 n10=9 n01=5 n00=51 | p=0.4240
+
+--- McNemar eksak: dampak perlakuan pada algoritma yang sama (vs S1) ---
+   KNN S1 vs S2: salah hanya di S1=5, salah hanya di S2=2 | p=0.4531
+   KNN S1 vs S3: salah hanya di S1=23, salah hanya di S3=24 | p=1.0000
+   KNN S1 vs S4: salah hanya di S1=23, salah hanya di S4=22 | p=1.0000
+   SVM S1 vs S2: salah hanya di S1=2, salah hanya di S2=0 | p=0.5000
+   SVM S1 vs S3: salah hanya di S1=13, salah hanya di S3=6 | p=0.1671
+   SVM S1 vs S4: salah hanya di S1=4, salah hanya di S4=2 | p=0.6875
+
+--- Uji DeLong: selisih AUC KNN vs SVM ---
+   S1: AUC KNN=0.9819 | AUC SVM=0.9979 | z=-4.135 | p=0.0000
+   S4: AUC KNN=0.9979 | AUC SVM=0.9979 | z=-0.913 | p=0.3611
+
+--- Waktu komputasi model S4 (median 5 kali; fit pada 7.140 data latih) ---
+   KNN: latih=14.34 ms | inferensi=0.0810 ms/sampel (batch 3061 sampel) | algoritma pencarian tetangga: kd_tree
+   SVM: latih=183.58 ms | inferensi=0.0326 ms/sampel (batch 3061 sampel)
+
+--- Uji skala data latih (model S4, inferensi pada seluruh data uji) ---
+ n_latih  KNN_latih_ms  KNN_inf_ms/sampel  SVM_latih_ms  SVM_inf_ms/sampel
+     441        7.4047             0.0592        9.1528             0.0044
+    1000        9.5780             0.0647        9.0856             0.0052
+    2500        8.1077             0.0565       28.6651             0.0127
+    5000       11.5328             0.0721       83.0477             0.0232
+    7140       13.1282             0.0742      173.6417             0.0321
+
+--- Analisis galat spasial (S4) ---
+   KNN: FP=22 FN=38 | jarak galat ke batas zona 25 m: median=1.68 m, maks=4.00 m, <=3 m: 90.0%, <=5 m: 100.0%
+   SVM: FP=25 FN=31 | jarak galat ke batas zona 25 m: median=1.62 m, maks=3.98 m, <=3 m: 92.9%, <=5 m: 100.0%
+   Gambar disimpan: gambar_galat_spasial.png
